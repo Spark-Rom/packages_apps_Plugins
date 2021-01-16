@@ -200,8 +200,6 @@ public class VolumeDialogImpl implements VolumeDialog {
 
     private boolean mLeftVolumeRocker;
 
-    private boolean mLeftVolumeRocker;
-
     private View[] views;
     private Drawable[] defaultDrawables;
     private String[] defaultDrawablesNames;
