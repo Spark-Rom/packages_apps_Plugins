@@ -20,6 +20,7 @@ package co.potatoproject.plugin.volume.oos;
 import android.media.AppTrackData;
 import android.database.ContentObserver;
 import android.os.UserHandle;
+import android.graphics.PorterDuff;
 import static android.app.ActivityManager.LOCK_TASK_MODE_NONE;
 import static android.media.AudioManager.RINGER_MODE_NORMAL;
 import static android.media.AudioManager.RINGER_MODE_SILENT;
@@ -483,6 +484,8 @@ public class VolumeDialogImpl implements VolumeDialog {
 
         row.view.setTag(row);
         row.slider = row.view.findViewById(R.id.volume_row_slider);
+        row.slider.setProgressTintMode(PorterDuff.Mode.SRC_ATOP);
+        row.slider.setThumbTintMode(PorterDuff.Mode.SRC_ATOP);
         row.slider.setOnSeekBarChangeListener(new VolumeSeekBarChangeListener(row));
 
         row.appMuted = data.isMuted();
