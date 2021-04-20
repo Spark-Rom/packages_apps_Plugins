@@ -200,6 +200,8 @@ public class VolumeDialogImpl implements VolumeDialog {
 
     private boolean mLeftVolumeRocker;
 
+    private boolean mLeftVolumeRocker;
+
     private View[] views;
     private Drawable[] defaultDrawables;
     private String[] defaultDrawablesNames;
@@ -221,7 +223,7 @@ public class VolumeDialogImpl implements VolumeDialog {
                 Prefs.getBoolean(sysuiContext, Prefs.Key.HAS_SEEN_ODI_CAPTIONS_TOOLTIP, false);
         settingsObserver = new SettingsObserver(mHandler);
         settingsObserver.observe();
-        mLeftVolumeRocker = mSysUIContext.getResources().getBoolean(mSysUIR.bool("config_audioPanelOnLeftSide"));
+           mLeftVolumeRocker = mSysUIContext.getResources().getBoolean(mSysUIR.bool("config_audioPanelOnLeftSide"));
     }
 
     public void init(int windowType, Callback callback) {
