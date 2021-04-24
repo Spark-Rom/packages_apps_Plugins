@@ -207,7 +207,7 @@ public class VolumeDialogImpl implements VolumeDialog {
         mShowActiveStreamOnly = showActiveStreamOnly();
         mHasSeenODICaptionsTooltip =
                 Prefs.getBoolean(sysuiContext, Prefs.Key.HAS_SEEN_ODI_CAPTIONS_TOOLTIP, false);
-        mLeftVolumeRocker = false;//mSysUIContext.getResources().getBoolean(mSysUIR.bool("config_audioPanelOnLeftSide"));
+        mLeftVolumeRocker = mSysUIContext.getResources().getBoolean(mSysUIR.bool("config_audioPanelOnLeftSide"));
     }
 
     public void init(int windowType, Callback callback) {
@@ -216,6 +216,7 @@ public class VolumeDialogImpl implements VolumeDialog {
         mAccessibility.init();
 
         mController.addCallback(mControllerCallbackH, mHandler);
+	mConfigurableTexts.update();
         mController.getState();
     }
 
@@ -353,11 +354,12 @@ public class VolumeDialogImpl implements VolumeDialog {
         mActiveStreamManuallyModified = false;
 
         updateRowsH(getActiveRow());
+        updateSwitchStreamButtonsH(getActiveRow());
         initOutputSwitcherH();
         initRingerH();
         initODICaptionsH();
     }
-    
+
     private final OnComputeInternalInsetsListener mInsetsListener = internalInsetsInfo -> {
         internalInsetsInfo.touchableRegion.setEmpty();
         internalInsetsInfo.setTouchableInsets(InternalInsetsInfo.TOUCHABLE_INSETS_REGION);
@@ -468,7 +470,6 @@ public class VolumeDialogImpl implements VolumeDialog {
 
     private VolumeRow findRow(int stream) {
         for (VolumeRow row : mRows) {
-            Log.d("Le cringe 2", String.valueOf(row.stream));
             if (row.stream == stream) return row;
         }
         return null;
