@@ -5,4 +5,5 @@ PRODUCT_PACKAGES += \
 	TiledPanel \
 	MiuiPanel \
         OosPanel \
-        P404Panel
+        P404Panel \
+	ShapeShiftPanel
