@@ -1,6 +1,6 @@
 android_app {
 
-    name: "OosPanel",
+    name: "NezPanel",
 
     static_libs: [
         "VolumePluginCommon",

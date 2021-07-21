@@ -10,7 +10,7 @@ OreoPanel
 TiledPanel
 MiuiPanel
 P404Panel
-OosPanel
+NezPanel
 ShapeShiftPanel
 ```
 

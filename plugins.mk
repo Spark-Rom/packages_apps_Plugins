@@ -4,6 +4,6 @@ PRODUCT_PACKAGES += \
 	OreoPanel \
 	TiledPanel \
 	MiuiPanel \
-        OosPanel \
+        NezPanel \
         P404Panel \
 	ShapeShiftPanel

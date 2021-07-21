@@ -12,7 +12,7 @@
      limitations under the License.
 -->
 <resources>
-    <string name="plugin_label">Oos panel</string>
+    <string name="plugin_label">Nez panel</string>
     <string name="volume_ringer_hint_mute">Mute</string>
     <string name="volume_ringer_hint_vibrate">Vibrate</string>
     <string name="volume_ringer_hint_muted">Muted</string>
